@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Image Title</th>
+      <th>Image</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in all_images %}
+    <tr>
+      <td>{{ item.img_title }}</td>
+      <td><img src="{{item.img.url}}"></td>
+    </tr>
+{% endfor %}
+
+  </tbody>
+</table>
+</body>
+</html>

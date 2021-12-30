@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+  a{
+  text-decoration: none;
+  font-size:18px;
+  font-weight:600
+  }
+  .bg-secondary{
+  background:rgba(0,0,0,.7) !important;
+  padding:10px 12px;
+  position:absolute;
+  right:10%;
+  top:2%
+  }
+  .badge a{
+  color:#fff;
+  font-size:14px
+  }
+</style>
+  </head>
+<body>
+<div class="container">
+  <div class="row text-center">
+    <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <span class="badge rounded-pill bg-secondary"><a href="/">ADD STUDENT <i class="ri-add-line"></i></a></span>
+<table class="table border">
+  <thead>
+    <tr class="bg-warning text-light">
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Gender</th>
+      <th scope="col">D.O.B</th>
+      <th scope="col">Address</th>
+      <th scope="col">Action</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for item in data %}
+    <tr>
+      <td>{{item.name}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.phone}}</td>
+      <td>{{item.gender}}</td>
+      <td>{{item.d_o_b}}</td>
+      <td>{{item.address}}</td>
+      <td><a href="update/{{ item.email }}" class="text-success"><i class="ri-edit-box-line"></i></a> </td>
+      <td><a href="delete/{{ item.email }}" class="text-danger"><i class="ri-delete-bin-line"></i></a> </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
